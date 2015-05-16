@@ -3,18 +3,33 @@ Section: ruby
 Priority: optional
 Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
 Uploaders: Balasankar C <balasankarc@autistici.org>
-Build-Depends: debhelper (>= 7.0.50~), gem2deb, ruby-rspec, rake
-Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 7.0.50~),
+               gem2deb,
+               rake,
+               ruby-omniauth,
+               ruby-omniauth-oauth2,
+               ruby-rack-test,
+               ruby-rspec (>= 3.0.0),
+               ruby-rspec-its,
+               ruby-webmock
+Standards-Version: 3.9.6
 Vcs-Git: git://anonscm.debian.org/pkg-ruby-extras/ruby-omniauth-gitlab.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-ruby-extras/ruby-omniauth-gitlab.git;a=summary
-Homepage: 
-Testsuite: autopkgtest
+Homepage: https://github.com/linchus/omniauth-gitlab
+Testsuite: autopkgtest-pkg-ruby
 XS-Ruby-Versions: all
 
 Package: ruby-omniauth-gitlab
 Architecture: all
 XB-Ruby-Versions: ${ruby:Versions}
-Depends: ${shlibs:Depends}, ${misc:Depends}, ruby | ruby-interpreter
-# omniauth (~> 1.0), omniauth-oauth2 (~> 1.0), rspec (~> 3.1, development), rspec-its (~> 1.0, development), rack-test (>= 0, development), simplecov (>= 0, development), webmock (>= 0, development)
-Description: This is the strategy for authenticating to your GitLab service
- This is the strategy for authenticating to your GitLab service
+Depends: ruby | ruby-interpreter,
+         ruby-omniauth,
+         ruby-omniauth-oauth2,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: OAuth2 strategy for authenticating to GitLab service
+ This gem provides the OAuth2 strategy for authenticating to the GitLab
+ service.
+ .
+ GitLab is a web-based Git repository manager with wiki and issue tracking
+ features.
