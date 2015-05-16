@@ -1,0 +1,5 @@
+ruby-omniauth-gitlab (1.0.0-1) UNRELEASED; urgency=medium
+
+  * Initial release (Closes: #nnnn)
+
+ -- Balasankar C <balasankarc@autistici.org>  Sat, 16 May 2015 17:00:53 +0530
